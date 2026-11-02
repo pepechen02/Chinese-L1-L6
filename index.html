@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>國小五年級國語 修辭總整理</title>
+<style>
+  :root{--g:#2e7d32;--b:#1565c0;--o:#e65100;--bg:#f6faf3;}
+  *{box-sizing:border-box}
+  body{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.8}
+  .wrap{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+  h1{text-align:center;color:var(--g);margin:10px 0 4px;font-size:28px}
+  .sub{text-align:center;color:#666;margin-bottom:14px}
+  .toolbar{text-align:center;margin:14px 0 20px}
+  button{font-size:17px;padding:10px 26px;border:none;border-radius:24px;background:var(--g);color:#fff;cursor:pointer;margin:0 4px}
+  button.alt{background:var(--b)}
+  button:hover{opacity:.88}
+  .note{background:#fff8e1;border-left:5px solid #ffb300;padding:8px 14px;border-radius:6px;font-size:14px;margin-bottom:20px}
+  table{width:100%;border-collapse:collapse;background:#fff;margin-bottom:26px;font-size:15px}
+  th,td{border:1px solid #cfd8dc;padding:7px 10px;text-align:left;vertical-align:top}
+  th{background:#e8f5e9;color:var(--g)}
+  h2.sec{color:#fff;background:var(--g);padding:6px 14px;border-radius:8px;font-size:20px;margin:30px 0 10px}
+  .lesson{background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.1);margin-bottom:24px;overflow:hidden;page-break-inside:avoid;break-inside:avoid}
+  .lh{background:var(--b);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  .lh .t{font-size:20px;font-weight:700}
+  .lh .p{font-size:14px;opacity:.9}
+  .lb{padding:12px 16px 14px}
+  .main{border:2px solid var(--o);border-radius:10px;padding:8px 14px;margin-bottom:12px;background:#fff3e0}
+  .main .name{font-size:19px;font-weight:700;color:var(--o)}
+  .tag{display:inline-block;background:var(--o);color:#fff;border-radius:12px;padding:0 10px;font-size:13px;margin-right:6px}
+  .tag.s{background:#6a8caf}
+  .ex{margin:4px 0 4px 0;padding-left:10px;border-left:4px solid #bbb}
+  .hint{color:#555;font-size:14px}
+  mark{background:#fff176;padding:0 2px;border-radius:3px}
+  h4{margin:12px 0 4px;color:var(--g);font-size:16px}
+  .ans{background:#e3f2fd;border-radius:8px;padding:6px 12px;margin-top:10px;font-size:15px}
+  .tip{margin-top:30px;background:#fff;border:2px dashed var(--g);border-radius:10px;padding:10px 18px}
+  footer{text-align:center;color:#888;font-size:13px;margin-top:30px}
+  .tabs{margin:6px 0 16px;text-align:center;border-bottom:3px solid var(--g)}
+  .tabs button{border-radius:12px 12px 0 0;background:#c8e6c9;color:#1b5e20;margin:0 3px;padding:10px 30px}
+  .tabs button.active{background:var(--g);color:#fff}
+  .pane{display:none}
+  .pane.active{display:block}
+  .rd{border:2px solid var(--b);border-radius:10px;padding:8px 14px;margin-bottom:12px;background:#f3f8ff}
+  .zy{display:inline-block;font-size:24px;font-weight:700;color:#fff;background:var(--b);border-radius:8px;padding:0 14px;margin-bottom:4px}
+  .rd ol{margin:4px 0 0;padding-left:24px}
+  .rd li{margin-bottom:3px}
+  .rd b{color:var(--o)}
+  .zz{color:#1565c0;font-size:13px}
+  .tipbox{background:#fff8e1;border-radius:8px;padding:6px 12px;font-size:15px;margin-top:6px}
+  @media print{
+    body{background:#fff;font-size:12.5pt}
+    .zy{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .toolbar,.note.noprint{display:none}
+    .wrap{max-width:100%;padding:0}
+    .lesson{box-shadow:none;border:1px solid #999}
+    .lh,h2.sec,th,.main,mark,.tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    h2.sec{page-break-after:avoid}
+    @page{size:A4;margin:12mm}
+  }
+
+
+
+  .legend{text-align:center;font-size:14px;margin-bottom:8px}
+  .legend .c1{color:#222}.legend .c2{color:var(--b)}.legend .c3{color:var(--o)}
+  .sheet{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .lc{border:2px solid #6a1b9a;border-radius:8px;overflow:hidden;background:#fff;break-inside:avoid;page-break-inside:avoid}
+  .lc h3{margin:0;background:#6a1b9a;color:#fff;padding:3px 10px;font-size:15px;display:flex;justify-content:space-between}
+  .cells{display:grid;grid-template-columns:repeat(4,1fr)}
+  .cell{border:1px solid #d7ccd9;padding:3px 2px;text-align:center;line-height:1.2}
+  .cell .top{display:flex;align-items:center;justify-content:center;gap:3px}
+  .cell .ch{font-size:28px;font-weight:700;color:#222}
+  .zv{display:inline-grid;grid-auto-flow:column;grid-auto-columns:auto;align-items:center;color:var(--b);font-weight:700;font-size:12px;line-height:1.05}
+  .zv i{font-style:normal;grid-column:1;text-align:center}
+  .zv b{grid-column:2;font-size:11px;margin-left:1px;align-self:center}
+  .cell .rd2{font-size:11px;color:var(--o);white-space:nowrap}
+  .cell .rd2 span{color:var(--o)}
+  @media (max-width:560px){.sheet{grid-template-columns:1fr}}
+  @media print{
+    body[data-tab="4"] h1,body[data-tab="4"] .sub{display:none}
+    #tab4 h2.sec{font-size:13pt;padding:2px 10px;margin:0 0 2mm;border-radius:6px}
+    .legend{font-size:8.5pt;margin-bottom:2mm}
+    .sheet{grid-template-columns:repeat(2,1fr)!important;gap:3mm}
+    .lc{border-width:1.2px;border-radius:4px}
+    .lc h3{font-size:10.5pt;padding:1mm 3mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cell{padding:0.6mm 0.3mm}
+    body[data-tab="4"] footer{display:none}
+    .cell .rd2{font-size:7pt}
+    .cell .ch{font-size:18pt}
+    .zv{font-size:7.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .zv b{font-size:7pt}
+    .cell .rd2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📚 國小五年級國語　考前複習彙整</h1>
+  <div class="sub">修辭 ＋ 多音字 ＋ 字義辨正 ＋ 生字　｜　考前複習用</div>
+  <div class="toolbar">
+    <div class="tabs">
+      <button id="b1" class="active" onclick="showTab(1)">✏️ 修辭</button>
+      <button id="b2" onclick="showTab(2)">🔊 多音字</button>
+      <button id="b3" onclick="showTab(3)">🔍 字義辨正</button>
+      <button id="b4" onclick="showTab(4)">🧩 生字</button>
+    </div>
+    <button onclick="window.print()">🖨️ 列印目前頁籤 / 存成 PDF</button>
+  </div>
+<div id="tab1" class="pane active">
+  <h2 class="sec" style="margin-top:0;background:#fff;color:var(--g);border:2px solid var(--g)">✏️ 國語修辭總整理</h2>
+  <div class="note noprint">頁次對照：第一課 p.4–17　第二課 p.18–32　第三課 p.33–47　第四課 p.51–65　第五課 p.70–84　第六課 p.85 起（依目錄判斷）。課文中的「修辭花嚕米」、「修辭研究室」、「小小練習」皆整理於下。</div>
+
+  <h2 class="sec">一、各課重點修辭速查表</h2>
+  <table>
+    <tr><th>課次／課名</th><th>修辭研究室（本課主打）</th><th>修辭花嚕米出現的修辭</th></tr>
+    <tr><td>第一課 你我之間<br>（p.13）</td><td><b>轉化（擬人）</b></td><td>轉化、類疊、映襯</td></tr>
+    <tr><td>第二課 風起，大家都在<br>（p.28）</td><td><b>譬喻</b></td><td>譬喻、感嘆、類疊</td></tr>
+    <tr><td>第三課 廉頗與藺相如<br>（p.43）</td><td><b>感嘆</b></td><td>感嘆、設問、頂真</td></tr>
+    <tr><td>第四課 來場快樂的桌遊<br>（p.61）</td><td><b>轉化（形象化）</b></td><td>轉化、譬喻、設問</td></tr>
+    <tr><td>第五課 超級英雄<br>（p.80）</td><td><b>設問（激問）</b></td><td>設問、誇飾、譬喻、轉化</td></tr>
+    <tr><td>第六課 世足賽的贏家<br>（p.96）</td><td><b>映襯</b></td><td>映襯、譬喻、轉化、類疊</td></tr>
+  </table>
+
+  <h2 class="sec">二、第一單元　當我們同在一起</h2>
+
+  <!-- 第一課 -->
+  <div class="lesson">
+    <div class="lh"><span class="t">第一課　你我之間</span><span class="p">課本 p.13</span></div>
+    <div class="lb">
+      <div class="main">
+        <div class="name"><span class="tag">修辭研究室</span>轉化（擬人）</div>
+        <div><b>意思：</b>將<mark>不具人類特徵的事物</mark>，以<mark>人類的觀念、性格、情感</mark>等，來思考或想像。</div>
+        <div class="ex">①春天來了，百花<mark>對著旅人展開了笑顏</mark>，蝴蝶穿梭花叢間<mark>跳起了迎賓舞</mark>。<div class="hint">→ 花和蝴蝶如人類般，做出了迎接客人的動作。</div></div>
+        <div class="ex">②咸豐草在微風中<mark>笑歪了腰</mark>。<div class="hint">→ 咸豐草隨風飄搖的姿態，像人類開心的模樣。</div></div>
+      </div>
+      <h4>✏️ 修辭花嚕米</h4>
+      <div><span class="tag s">轉化</span>原子筆<mark>告訴</mark>鉛筆要堅定；相機告訴手機要專一；抹布告訴衛生紙要耐勞；海報告訴拼圖要獨立。<div class="hint">（把物品當成人，會「說話」、有性格）</div></div>
+      <div style="margin-top:6px"><span class="tag s">類疊</span>鉛筆告訴原子筆要隨和；手機告訴相機要多元；衛生紙告訴抹布要犧牲；拼圖告訴海報要團結。<div class="hint">（「告訴……要……」句型重複出現）</div></div>
+      <div style="margin-top:6px"><span class="tag s">映襯</span>原子筆告訴鉛筆要<mark>堅定</mark>，鉛筆告訴原子筆要<mark>隨和</mark>。／刺蝟愛上了一顆氣球，但牠<mark>不能擁抱它</mark>。<div class="hint">（堅定↔隨和；愛上↔不能擁抱，兩種相反的情況對照）</div></div>
+      <div class="ans">📝 <b>小小練習：</b>哪一個句子使用「擬人」？<br>答案：<b>② 大地穿上了秋風編織的新衣。</b>（①「果實如下雨般紛紛落下」是譬喻）</div>
+    </div>
+  </div>
+
+  <!-- 第二課 -->
+  <div class="lesson">
+    <div class="lh"><span class="t">第二課　風起，大家都在</span><span class="p">課本 p.28</span></div>
+    <div class="lb">
+      <div class="main">
+        <div class="name"><span class="tag">修辭研究室</span>譬喻</div>
+        <div><b>意思：</b>使用<mark>「打比方」</mark>的方法，使文章內容表達得<mark>更具體、更生動</mark>。<br><b>辨認：</b>常有「像、如、好像、就像、一樣」等詞。</div>
+        <div class="ex">①下雨了，五顏六色的雨傘<mark>如</mark>花朵紛紛綻放，把雨景增添得更有趣味。<div class="hint">→ 把開雨傘比喻成開花。</div></div>
+        <div class="ex">②太陽<mark>像</mark>一個火球，發光發熱，照亮了大地。<div class="hint">→ 把太陽具體化，比喻成火球。</div></div>
+      </div>
+      <h4>✏️ 修辭花嚕米</h4>
+      <div><span class="tag s">譬喻</span>
+        <div class="ex">1. 走在校園裡，到處縈繞著風的顏色。有的在遠處，<mark>像是</mark>樹梢的微風。</div>
+        <div class="ex">2. 老師彈風琴……就<mark>像</mark>從不同方向吹來的風，將落葉、花絮都飄起來。</div>
+        <div class="ex">3. 聽著音樂，真的就<mark>像</mark>看見了有顏色的風。</div>
+      </div>
+      <div style="margin-top:6px"><span class="tag s">感嘆</span>沒關係，當孤單感覺來臨時，試著回想風的顏色，想像自己是一陣微風，來，加入風的隊伍裡，產生更強的威力<mark>吧！</mark></div>
+      <div style="margin-top:6px"><span class="tag s">類疊</span>1. 讓耳朵和內心，<mark>聽見</mark>自己，也<mark>聽見</mark>別人的音樂。<br>　　　2. 風起，你<mark>在</mark>，大家都<mark>在</mark>。<div class="hint">（同一個詞連續重複，加強語氣）</div></div>
+      <div class="ans">📝 <b>小小練習：</b>哪一個句子使用「譬喻」？<br>答案：<b>② 螞蟻大隊就像大力士一樣，一起搬動著美味的食物。</b>（①青蛙張開大嘴開心唱歌是擬人）</div>
+    </div>
+  </div>
+
+  <!-- 第三課 -->
+  <div class="lesson">
+    <div class="lh"><span class="t">第三課　廉頗與藺相如</span><span class="p">課本 p.43</span></div>
+    <div class="lb">
+      <div class="main">
+        <div class="name"><span class="tag">修辭研究室</span>感嘆</div>
+        <div><b>意思：</b>當人遇到<mark>喜、怒、哀、樂</mark>的事情時，常會以<mark>呼聲</mark>來表達情感，稱為感嘆。<br><b>辨認：</b>常有「！」，或「啊、哇、唉、吧」等語氣詞。</div>
+        <div class="ex">①發生事故後，這個商場幾乎不再出現人潮，太驚人了<mark>吧！</mark><div class="hint">→ 用感嘆來表達「驚訝」。</div></div>
+        <div class="ex">②你看！這是一棵多麼高大的樹<mark>哇！</mark><div class="hint">→ 用感嘆來表達「感受」。</div></div>
+      </div>
+      <h4>✏️ 修辭花嚕米</h4>
+      <div><span class="tag s">感嘆</span>
+        <div class="ex">1. 我是以國家安全為重，才躲著廉頗，不想和他發生衝突，並非怕他<mark>！</mark></div>
+        <div class="ex">2. 我是一個氣量小、見識少的人，不知道您為了顧全大局對我如此包容，請責罰我<mark>吧！</mark></div>
+      </div>
+      <div style="margin-top:6px"><span class="tag s">設問</span>
+        <div class="ex">1. 我連秦王都不怕了，怎麼會怕廉頗將軍<mark>呢？</mark></div>
+        <div class="ex">2. 你們想一想，強大的秦國為什麼不敢攻打我們趙國<mark>？</mark></div>
+        <div class="ex">3. 如果我們兩人相互爭鬥，因而造成國家動盪、社會不安，不是正好讓秦國有機會出兵<mark>嗎？</mark></div>
+        <div class="hint">（用疑問句發問，引起注意；1、3 的答案在問題反面→激問）</div>
+      </div>
+      <div style="margin-top:6px"><span class="tag s">頂真</span>他公開羞辱<mark>您</mark>，<mark>您</mark>卻一味閃躲。<div class="hint">（前一句的結尾，就是後一句的開頭）</div></div>
+      <div class="ans">📝 <b>小小練習：</b>用「感嘆」寫出小美看到剛回國的小表妹時，心裡開心的感受。<br>參考答案：<b>「哇！好久不見，妳長這麼高了！」</b>（只要有表達開心的呼聲與「！」即可）</div>
+    </div>
+  </div>
+
+  <h2 class="sec">三、第二單元　生活大小事</h2>
+
+  <!-- 第四課 -->
+  <div class="lesson">
+    <div class="lh"><span class="t">第四課　來場快樂的桌遊</span><span class="p">課本 p.61</span></div>
+    <div class="lb">
+      <div class="main">
+        <div class="name"><span class="tag">修辭研究室</span>轉化（形象化）</div>
+        <div><b>意思：</b>轉化可分為<mark>擬人、擬物、形象化</mark>三種。形象化就是將<mark>抽象的事物</mark>視為<mark>具體可見的事物</mark>。</div>
+        <div class="ex">①收集生活中美好的<mark>時光</mark>。<div class="hint">→ 將抽象的「時光」視為具體可收集的事物。</div></div>
+        <div class="ex">②我們<mark>披著夜色</mark>，踏著愉快的腳步，朝著家的方向前進。<div class="hint">→ 將「夜色」轉化成具體事物才能「披」。</div></div>
+      </div>
+      <h4>✏️ 修辭花嚕米</h4>
+      <div><span class="tag s">轉化</span>
+        <div class="ex">1. 玩桌遊容易<mark>炒熱氣氛</mark>。（氣氛看不到，像食物一樣能「炒熱」→形象化）</div>
+        <div class="ex">2. ……一起玩桌遊，很快就能<mark>打破年齡的界線</mark>。（界線是抽象的，像東西可被「打破」）</div>
+      </div>
+      <div style="margin-top:6px"><span class="tag s">譬喻</span>近年來，「桌遊店」<mark>如</mark>雨後春筍般出現……</div>
+      <div style="margin-top:6px"><span class="tag s">設問</span>你知道什麼是「桌遊」<mark>嗎？</mark>它其實就是桌上遊戲……<div class="hint">（有問有答→提問）</div></div>
+      <div class="ans">📝 <b>小小練習：</b>哪一個句子使用「形象化」？<br>答案：<b>① 活動熱絡了情感，炒熱了氣氛。</b>（②向日葵抬起了頭、望著太陽微笑是擬人）</div>
+    </div>
+  </div>
+
+  <!-- 第五課 -->
+  <div class="lesson">
+    <div class="lh"><span class="t">第五課　超級英雄</span><span class="p">課本 p.80</span></div>
+    <div class="lb">
+      <div class="main">
+        <div class="name"><span class="tag">修辭研究室</span>設問（激問）</div>
+        <div><b>意思：</b>寫文章時，用<mark>疑問句</mark>來發問，藉此引起讀者的注意。設問可分為<mark>提問、激問、疑問</mark>。表示<mark>答案在問題的反面</mark>，就是「激問」。</div>
+        <div class="ex">①他最愛的是什麼？就是蜂蜜。<div class="hint">→ <b>提問</b>：有問有答。</div></div>
+        <div class="ex">②他難道不清楚闖紅燈是違法的事情嗎？<div class="hint">→ <b>激問</b>：肯定他知道闖紅燈是違法的。</div></div>
+        <div class="ex">③這些舊書要不要回收呢？<div class="hint">→ <b>疑問</b>：想得知舊書應該如何處理。</div></div>
+      </div>
+      <h4>✏️ 修辭花嚕米</h4>
+      <div><span class="tag s">設問</span>
+        <div class="ex">1. 我想要找今天看的那一部片子，為什麼就是找不到<mark>呢？</mark>（疑問）</div>
+        <div class="ex">2. 「違法？」銳邦不明白自己想讓大家免費觀賞電影，怎麼就違法了<mark>？</mark></div>
+        <div class="ex">3. 如果大家都在網路上看免費電影，那麼拍電影的人不就無法得到應得的利潤<mark>？</mark>（激問）</div>
+      </div>
+      <div style="margin-top:6px"><span class="tag s">誇飾</span>他的腳步飛快，<mark>媲美閃電俠</mark>，連眼神都比超人發出的光束<mark>還要閃亮</mark>。<div class="hint">（把事物說得誇張、超過事實，讓人印象深刻）</div></div>
+      <div style="margin-top:6px"><span class="tag s">譬喻</span>銳邦不禁嘴角上揚，感覺自己<mark>像</mark>拯救世界的超人<mark>一樣</mark>威風。</div>
+      <div style="margin-top:6px"><span class="tag s">轉化</span>銳邦的「超人夢」，<mark>就此畫下句點</mark>。<div class="hint">（夢想是抽象的，像文章一樣能「畫句點」→形象化）</div></div>
+      <div class="ans">📝 <b>小小練習：</b>哪一個句子使用「激問」？<br>答案：<b>① 你不道歉，他會原諒你嗎？</b>（答案在反面：不會原諒）<br>②「你知道太陽距離地球有多遠嗎？」是疑問；③「天還早嗎？不早了，公雞都叫了。」是提問（有問有答）。</div>
+    </div>
+  </div>
+
+  <!-- 第六課 -->
+  <div class="lesson">
+    <div class="lh"><span class="t">第六課　世足賽的贏家</span><span class="p">課本 p.96</span></div>
+    <div class="lb">
+      <div class="main">
+        <div class="name"><span class="tag">修辭研究室</span>映襯</div>
+        <div><b>意思：</b>把<mark>兩種相反的觀念或事實</mark>並列做比較，能<mark>增強文句的語氣</mark>，也能<mark>凸顯作者要表達的觀念</mark>。</div>
+        <div class="ex">①爸爸說：「孩子是父母<mark>沉重</mark>又<mark>甜蜜</mark>的負擔。」<div class="hint">→ 「沉重」和「甜蜜」意思相對。</div></div>
+        <div class="ex">②我們育幼院的院長一生致力於照顧孩子，是<mark>平凡</mark>的<mark>偉人</mark>。<div class="hint">→ 「平凡」和「偉人」意思相反。</div></div>
+      </div>
+      <h4>✏️ 修辭花嚕米</h4>
+      <div><span class="tag s">映襯</span>臺灣<mark>雖非足球強國</mark>，卻<mark>沒有在這場盛會中缺席</mark>。<div class="hint">（非強國↔沒缺席，形成對比）</div></div>
+      <div style="margin-top:6px"><span class="tag s">譬喻</span>世界盃足球賽就<mark>像</mark>一場球技與時尚的嘉年華，吸引著千百萬人的目光。</div>
+      <div style="margin-top:6px"><span class="tag s">轉化</span>
+        <div class="ex">1. 臺灣在球員的更衣室<mark>贏了</mark>自己的世界盃！（把更衣室、世界盃寫成能「贏」的比賽，帶有人的情感）</div>
+        <div class="ex">2. 「臺灣製造」(Made in Taiwan) 的金字招牌，也在世人眼中<mark>閃閃發亮</mark>。（把名聲這種抽象的事物，寫得像會發光的東西）</div>
+      </div>
+      <div style="margin-top:6px"><span class="tag s">類疊</span>
+        <div class="ex">1. 每個環節<mark>都是</mark>關卡，每個關卡<mark>都</mark>需要突破。</div>
+        <div class="ex">2. ……在世人眼中<mark>閃閃</mark>發亮。</div>
+      </div>
+      <div class="ans">📝 <b>小小練習：</b>哪一個句子使用「映襯」？<br>答案：<b>① 這家商店裡什麼都有，但是我口袋裡沒錢。</b>（「什麼都有」↔「沒錢」相對）<br>②「有志者事竟成」是俗語，不是映襯。</div>
+    </div>
+  </div>
+
+  <h2 class="sec">四、修辭小辭典（總整理）</h2>
+  <table>
+    <tr><th style="width:18%">修辭</th><th>意思</th><th style="width:30%">辨認線索</th></tr>
+    <tr><td><b>轉化（擬人）</b></td><td>把沒有人類特徵的事物，當成人來寫（有動作、情感、性格）。</td><td>物品會說話、笑、跳舞、穿衣服</td></tr>
+    <tr><td><b>轉化（形象化）</b></td><td>把抽象的事物（時光、夜色、氣氛）當成具體看得見、摸得到的東西。</td><td>披著夜色、炒熱氣氛、打破界線</td></tr>
+    <tr><td><b>譬喻</b></td><td>打比方，讓內容更具體生動。</td><td>像、如、好像、就像……一樣</td></tr>
+    <tr><td><b>感嘆</b></td><td>用呼聲表達喜怒哀樂的情感。</td><td>！、哇、吧、啊</td></tr>
+    <tr><td><b>設問</b></td><td>用疑問句發問引起注意。分<b>提問</b>（有問有答）、<b>激問</b>（答案在問題反面）、<b>疑問</b>（真的想知道答案）。</td><td>？，看有沒有答案、答案在不在反面</td></tr>
+    <tr><td><b>映襯</b></td><td>把兩種相反的觀念或事實放在一起比較，強調想表達的意思。</td><td>沉重↔甜蜜、平凡↔偉人</td></tr>
+    <tr><td><b>類疊</b>（補充）</td><td>同一個字詞或句子連續重複出現，加強語氣。</td><td>聽見……聽見……、閃閃、都是……都</td></tr>
+    <tr><td><b>頂真</b>（補充）</td><td>前一句的結尾，當作後一句的開頭。</td><td>……您，您……</td></tr>
+    <tr><td><b>誇飾</b>（補充）</td><td>故意說得誇張，超過事實，讓人印象深刻。</td><td>媲美閃電俠、比光束還閃亮</td></tr>
+  </table>
+
+  <div class="tip">
+    <b>💡 考前小撇步</b>
+    <ol>
+      <li><b>先找記號</b>：像／如→譬喻；「！」→感嘆；「？」→設問。</li>
+      <li><b>設問再細分</b>：有問有答＝提問；答案在反面＝激問；真的想知道＝疑問。</li>
+      <li><b>轉化看對象</b>：物品像人→擬人；抽象東西變得具體→形象化。</li>
+      <li><b>映襯看對比</b>：有沒有一組意思相反的詞？</li>
+    </ol>
+  </div>
+
+  <div id="quiz" class="tip" style="border-color:var(--b)">
+    <b>📝 自我測驗（把答案蓋住試試看）</b>
+    <ol>
+      <li>「咸豐草在微風中笑歪了腰。」是什麼修辭？<br><span class="hint">答：轉化（擬人）</span></li>
+      <li>「太陽像一個火球，照亮了大地。」是什麼修辭？<br><span class="hint">答：譬喻</span></li>
+      <li>「這是一棵多麼高大的樹哇！」是什麼修辭？<br><span class="hint">答：感嘆</span></li>
+      <li>「我們披著夜色，踏著愉快的腳步回家。」是什麼修辭？<br><span class="hint">答：轉化（形象化）</span></li>
+      <li>「他難道不清楚闖紅燈是違法的嗎？」是什麼修辭？<br><span class="hint">答：設問（激問）</span></li>
+      <li>「孩子是父母沉重又甜蜜的負擔。」是什麼修辭？<br><span class="hint">答：映襯</span></li>
+      <li>「他公開羞辱您，您卻一味閃躲。」是什麼修辭？<br><span class="hint">答：頂真</span></li>
+    </ol>
+  </div>
+
+</div><!-- /tab1 -->
+
+<div id="tab2" class="pane">
+  <h2 class="sec" style="margin-top:0;background:#fff;color:var(--b);border:2px solid var(--b)">🔊 認識多音字</h2>
+  <div class="note">課本頁次：「脈」在 p.21、「創」在其後，屬<b>第二課</b>（p.18–32）。其餘字的截圖沒有顯示頁次，這裡先依提供順序整理。</div>
+
+  <table>
+    <tr><th>字</th><th>讀音一</th><th>讀音二</th></tr>
+    <tr><td><b>質</b></td><td>ㄓˊ（本質、質問）</td><td>ㄓˋ（質押、人質）</td></tr>
+    <tr><td><b>飲</b></td><td>ㄧㄣˇ（喝：飲血、冷飲）</td><td>ㄧㄣˋ（給人或動物喝：飲馬）</td></tr>
+    <tr><td><b>脈</b></td><td>ㄇㄞˋ（血管、山脈）</td><td>ㄇㄛˋ（含情脈脈）</td></tr>
+    <tr><td><b>創</b></td><td>ㄔㄨㄤˋ（創意、首創）</td><td>ㄔㄨㄤ（創傷、創口）</td></tr>
+    <tr><td><b>勞</b></td><td>ㄌㄠˊ（辛苦、功勞）</td><td>ㄌㄠˋ（慰勞、勞軍）</td></tr>
+    <tr><td><b>供</b></td><td>ㄍㄨㄥ（提供、供認）</td><td>ㄍㄨㄥˋ（供佛、供品）</td></tr>
+    <tr><td><b>旋</b></td><td>ㄒㄩㄢˊ（旋轉、凱旋）</td><td>ㄒㄩㄢˋ（旋風）</td></tr>
+  </table>
+
+  <!-- 質 -->
+  <div class="lesson"><div class="lh"><span class="t">質</span><span class="p">2 個讀音</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄓˊ</span>
+      <ol>
+        <li>事物的根本特性。如：<b>本質</b><span class="zz">（ㄅㄣˇ ㄓˊ）</span>、<b>特質</b><span class="zz">（ㄊㄜˋ ㄓˊ）</span>、<b>流質</b><span class="zz">（ㄌㄧㄡˊ ㄓˊ）</span>。</li>
+        <li>人的天性稟賦。如：<b>資質</b><span class="zz">（ㄗ ㄓˊ）</span>、<b>氣質</b><span class="zz">（ㄑㄧˋ ㄓˊ）</span>。</li>
+        <li>樸實的本性。如：<b>質樸</b><span class="zz">（ㄓˊ ㄆㄨˇ）</span>、<b>文質彬彬</b><span class="zz">（ㄨㄣˊ ㄓˊ ㄅㄧㄣ ㄅㄧㄣ）</span>。</li>
+        <li>詢問。如：<b>質問</b><span class="zz">（ㄓˊ ㄨㄣˋ）</span>、<b>質詢</b><span class="zz">（ㄓˊ ㄒㄩㄣˊ）</span>、<b>質疑</b><span class="zz">（ㄓˊ ㄧˊ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄓˋ</span>
+      <ol>
+        <li>以人或財物作為抵押。如：<b>質押</b><span class="zz">（ㄓˋ ㄧㄚ）</span>。</li>
+        <li>被抵押的人或物。如：<b>人質</b><span class="zz">（ㄖㄣˊ ㄓˋ）</span>。</li>
+      </ol></div>
+    <div class="tipbox">💡 記法：「抵押」的意思讀 ㄓˋ，其他大多讀 ㄓˊ。</div>
+  </div></div>
+
+  <!-- 飲 -->
+  <div class="lesson"><div class="lh"><span class="t">飲</span><span class="p">2 個讀音</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄧㄣˇ</span>
+      <ol>
+        <li>喝。如：<b>茹毛飲血</b><span class="zz">（ㄖㄨˊ ㄇㄠˊ ㄧㄣˇ ㄒㄩㄝˋ）</span>、<b>飲鴆止渴</b><span class="zz">（ㄧㄣˇ ㄓㄣˋ ㄓˇ ㄎㄜˇ）</span>。</li>
+        <li>特指喝酒。如：<b>小飲</b><span class="zz">（ㄒㄧㄠˇ ㄧㄣˇ）</span>、<b>痛飲</b><span class="zz">（ㄊㄨㄥˋ ㄧㄣˇ）</span>、<b>對飲</b><span class="zz">（ㄉㄨㄟˋ ㄧㄣˇ）</span>。</li>
+        <li>可喝的流質食物。如：<b>冷飲</b><span class="zz">（ㄌㄥˇ ㄧㄣˇ）</span>、<b>熱飲</b><span class="zz">（ㄖㄜˋ ㄧㄣˇ）</span>。</li>
+        <li>含忍、懷著。如：<b>飲恨</b><span class="zz">（ㄧㄣˇ ㄏㄣˋ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄧㄣˋ</span>
+      <ol><li>以水或流質的東西給人或動物喝。如：<b>飲馬</b><span class="zz">（ㄧㄣˋ ㄇㄚˇ）</span>。</li></ol></div>
+    <div class="tipbox">💡 記法：自己喝＝ㄧㄣˇ；「給」別人／動物喝＝ㄧㄣˋ。</div>
+  </div></div>
+
+  <!-- 脈 -->
+  <div class="lesson"><div class="lh"><span class="t">脈</span><span class="p">2 個讀音　｜　課本 p.21（第二課）</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄇㄞˋ</span>
+      <ol>
+        <li>分布在人或動物全身，使血液流通而循環不窮的血管。如：<b>動脈</b><span class="zz">（ㄉㄨㄥˋ ㄇㄞˋ）</span>、<b>靜脈</b><span class="zz">（ㄐㄧㄥˋ ㄇㄞˋ）</span>。</li>
+        <li>像血管一樣，有條理分支的事物。如：<b>葉脈</b><span class="zz">（ㄧㄝˋ ㄇㄞˋ）</span>、<b>山脈</b><span class="zz">（ㄕㄢ ㄇㄞˋ）</span>。</li>
+        <li>血統支系。如：<b>一脈單傳</b><span class="zz">（ㄧˋ ㄇㄞˋ ㄉㄢ ㄔㄨㄢˊ）</span>。</li>
+        <li>脈搏。如：<b>脈診</b><span class="zz">（ㄇㄞˋ ㄓㄣˇ）</span>、<b>把脈</b><span class="zz">（ㄅㄚˇ ㄇㄞˋ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄇㄛˋ</span>
+      <ol><li>用含情的眼神，凝視不語的樣子。如：<b>含情脈脈</b><span class="zz">（ㄏㄢˊ ㄑㄧㄥˊ ㄇㄛˋ ㄇㄛˋ）</span>。</li></ol></div>
+    <div class="tipbox">💡 記法：只有「含情脈脈」讀 ㄇㄛˋ，其餘都讀 ㄇㄞˋ。</div>
+  </div></div>
+
+  <!-- 創 -->
+  <div class="lesson"><div class="lh"><span class="t">創</span><span class="p">2 個讀音　｜　第二課</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄔㄨㄤˋ</span>
+      <ol>
+        <li>開始做。如：<b>首創</b><span class="zz">（ㄕㄡˇ ㄔㄨㄤˋ）</span>、<b>草創</b><span class="zz">（ㄘㄠˇ ㄔㄨㄤˋ）</span>。</li>
+        <li>開始的、獨特的。如：<b>創見</b><span class="zz">（ㄔㄨㄤˋ ㄐㄧㄢˋ）</span>、<b>創意</b><span class="zz">（ㄔㄨㄤˋ ㄧˋ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄔㄨㄤ</span>
+      <ol><li>傷口、傷痕。如：<b>創口</b><span class="zz">（ㄔㄨㄤ ㄎㄡˇ）</span>、<b>創傷</b><span class="zz">（ㄔㄨㄤ ㄕㄤ）</span>。</li></ol></div>
+    <div class="tipbox">💡 記法：和「傷」有關＝ㄔㄨㄤ（一聲）；「開創、創新」＝ㄔㄨㄤˋ（四聲）。</div>
+  </div></div>
+
+  <!-- 勞 -->
+  <div class="lesson"><div class="lh"><span class="t">勞</span><span class="p">2 個讀音</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄌㄠˊ</span>
+      <ol>
+        <li>辛苦、疲累。如：<b>旅途勞頓</b><span class="zz">（ㄌㄩˇ ㄊㄨˊ ㄌㄠˊ ㄉㄨㄣˋ）</span>。</li>
+        <li>辛勤、努力做事。如：<b>勤勞</b><span class="zz">（ㄑㄧㄣˊ ㄌㄠˊ）</span>、<b>操勞</b><span class="zz">（ㄘㄠ ㄌㄠˊ）</span>。</li>
+        <li>煩擾。為請人幫忙的客套話。如：<b>偏勞</b><span class="zz">（ㄆㄧㄢ ㄌㄠˊ）</span>、<b>勞駕</b><span class="zz">（ㄌㄠˊ ㄐㄧㄚˋ）</span>、<b>勞煩</b><span class="zz">（ㄌㄠˊ ㄈㄢˊ）</span>。</li>
+        <li>成績、功勳。如：<b>功勞</b><span class="zz">（ㄍㄨㄥ ㄌㄠˊ）</span>、<b>汗馬之勞</b><span class="zz">（ㄏㄢˋ ㄇㄚˇ ㄓ ㄌㄠˊ）</span>。</li>
+        <li>勞動者的簡稱。如：<b>勞資關係</b><span class="zz">（ㄌㄠˊ ㄗ ㄍㄨㄢ ㄒㄧˋ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄌㄠˋ</span>
+      <ol><li>慰問。如：<b>慰勞</b><span class="zz">（ㄨㄟˋ ㄌㄠˋ）</span>、<b>勞軍</b><span class="zz">（ㄌㄠˋ ㄐㄩㄣ）</span>。</li></ol></div>
+    <div class="tipbox">💡 記法：「慰問」的意思讀 ㄌㄠˋ（慰勞、勞軍），其他都讀 ㄌㄠˊ。</div>
+  </div></div>
+
+  <!-- 供 -->
+  <div class="lesson"><div class="lh"><span class="t">供</span><span class="p">2 個讀音</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄍㄨㄥ</span>
+      <ol>
+        <li>給予。如：<b>提供</b><span class="zz">（ㄊㄧˊ ㄍㄨㄥ）</span>、<b>供應</b><span class="zz">（ㄍㄨㄥ ㄧㄥˋ）</span>、<b>供給</b><span class="zz">（ㄍㄨㄥ ㄐㄧˇ）</span>。</li>
+        <li>受審者陳述案情。如：<b>供認</b><span class="zz">（ㄍㄨㄥ ㄖㄣˋ）</span>、<b>供出</b><span class="zz">（ㄍㄨㄥ ㄔㄨ）</span>。</li>
+        <li>受審者所陳說的案情。如：<b>口供</b><span class="zz">（ㄎㄡˇ ㄍㄨㄥ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄍㄨㄥˋ</span>
+      <ol>
+        <li>奉祀。如：<b>供佛</b><span class="zz">（ㄍㄨㄥˋ ㄈㄛˊ）</span>。</li>
+        <li>奉養。如：<b>供養</b><span class="zz">（ㄍㄨㄥˋ ㄧㄤˇ）</span>。</li>
+        <li>祭品或供給別人食用的菜餚。如：<b>供品</b><span class="zz">（ㄍㄨㄥˋ ㄆㄧㄣˇ）</span>、<b>供物</b><span class="zz">（ㄍㄨㄥˋ ㄨˋ）</span>。</li>
+        <li>從事、擔任。如：<b>供職</b><span class="zz">（ㄍㄨㄥˋ ㄓˊ）</span>。</li>
+      </ol></div>
+    <div class="tipbox">💡 記法：「給予、供述案情」＝ㄍㄨㄥ（一聲）；「拜拜、奉養、供品、任職」＝ㄍㄨㄥˋ（四聲）。</div>
+  </div></div>
+
+  <!-- 旋 -->
+  <div class="lesson"><div class="lh"><span class="t">旋</span><span class="p">2 個讀音</span></div><div class="lb">
+    <div class="rd"><span class="zy">ㄒㄩㄢˊ</span>
+      <ol>
+        <li>繞著轉動。如：<b>旋轉</b><span class="zz">（ㄒㄩㄢˊ ㄓㄨㄢˇ）</span>、<b>回旋</b><span class="zz">（ㄏㄨㄟˊ ㄒㄩㄢˊ）</span>。</li>
+        <li>回、歸。如：<b>凱旋</b><span class="zz">（ㄎㄞˇ ㄒㄩㄢˊ）</span>。</li>
+        <li>立刻、即刻。如：<b>旋即</b><span class="zz">（ㄒㄩㄢˊ ㄐㄧˊ）</span>。</li>
+      </ol></div>
+    <div class="rd"><span class="zy">ㄒㄩㄢˋ</span>
+      <ol><li>打轉的。如：<b>旋風</b><span class="zz">（ㄒㄩㄢˋ ㄈㄥ）</span>。</li></ol></div>
+    <div class="tipbox">💡 記法：只有「旋風」讀 ㄒㄩㄢˋ，其他都讀 ㄒㄩㄢˊ。</div>
+  </div></div>
+
+  <div class="tip" style="border-color:var(--b)">
+    <b>📝 自我測驗：下面的字怎麼念？（把答案蓋住試試看）</b>
+    <ol>
+      <li>人<u>質</u>被救出來了。<br><span class="hint">答：ㄓˋ</span></li>
+      <li>他正在<u>飲</u>馬。<br><span class="hint">答：ㄧㄣˋ</span></li>
+      <li>兩人<u>含情脈脈</u>地對望。（脈念？）<br><span class="hint">答：ㄇㄛˋ</span></li>
+      <li>手臂上有一個<u>創</u>口。<br><span class="hint">答：ㄔㄨㄤ</span></li>
+      <li>校長到營區慰<u>勞</u>士兵。<br><span class="hint">答：ㄌㄠˋ</span></li>
+      <li>他在市政府<u>供</u>職。<br><span class="hint">答：ㄍㄨㄥˋ</span></li>
+      <li>一陣<u>旋</u>風吹過操場。<br><span class="hint">答：ㄒㄩㄢˋ</span></li>
+    </ol>
+  </div>
+</div><!-- /tab2 -->
+
+<div id="tab3" class="pane">
+  <h2 class="sec" style="margin-top:0;background:#fff;color:var(--o);border:2px solid var(--o)">🔍 字義辨正</h2>
+  <div class="note">「字義辨正」是同一個字（讀音相同）的不同意思，考試常出「這個詞裡的 ○ 字是什麼意思？」。各字課次請依課本頁次再確認（「潤」的截圖頁碼與「脈」同頁，應也在第二課附近）。</div>
+
+  <table>
+    <tr><th style="width:12%">字</th><th style="width:12%">義項數</th><th>各義項重點</th></tr>
+    <tr><td><b>掩</b></td><td>3</td><td>遮蓋 ／ 關閉 ／ 暗中偷偷</td></tr>
+    <tr><td><b>潤</b></td><td>5</td><td>滋益 ／ 潮溼 ／ 使潮溼 ／ 修飾 ／ 細膩光滑</td></tr>
+    <tr><td><b>眾</b></td><td>2</td><td>數量多 ／ 許多的人</td></tr>
+    <tr><td><b>熟</b></td><td>7</td><td>認識的 ／ 煮爛 ／ 技藝精巧 ／ 加工過 ／ 果實成熟 ／ 深沉安穩 ／ 仔細</td></tr>
+    <tr><td><b>攻</b></td><td>4</td><td>出擊 ／ 治療 ／ 指責 ／ 從事鑽研</td></tr>
+    <tr><td><b>擁</b></td><td>4</td><td>抱 ／ 持有 ／ 推崇 ／ 擠在一起</td></tr>
+    <tr><td><b>充</b></td><td>4</td><td>填滿 ／ 代理擔任 ／ 假冒 ／ 填塞</td></tr>
+  </table>
+
+  <!-- 掩 -->
+  <div class="lesson"><div class="lh"><span class="t">掩</span><span class="p">3 個字義　｜　ㄧㄢˇ</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>遮蓋、遮蔽</b>。如：遮掩<span class="zz">（ㄓㄜ ㄧㄢˇ）</span>、掩面<span class="zz">（ㄧㄢˇ ㄇㄧㄢˋ）</span>、掩耳盜鈴<span class="zz">（ㄧㄢˇ ㄦˇ ㄉㄠˋ ㄌㄧㄥˊ）</span>。</li>
+      <li><b>關閉</b>。如：掩門<span class="zz">（ㄧㄢˇ ㄇㄣˊ）</span>。</li>
+      <li><b>暗中、偷偷</b>。如：掩襲敵軍<span class="zz">（ㄧㄢˇ ㄒㄧˊ ㄉㄧˊ ㄐㄩㄣ）</span>。</li>
+    </ol></div>
+  </div></div>
+
+  <!-- 潤 -->
+  <div class="lesson"><div class="lh"><span class="t">潤</span><span class="p">5 個字義　｜　ㄖㄨㄣˋ</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>滋益</b>。如：利潤<span class="zz">（ㄌㄧˋ ㄖㄨㄣˋ）</span>、分潤<span class="zz">（ㄈㄣ ㄖㄨㄣˋ）</span>。</li>
+      <li><b>潮溼、不枯燥</b>。如：溼潤<span class="zz">（ㄕ ㄖㄨㄣˋ）</span>。</li>
+      <li><b>使潮溼、不枯乾</b>。如：潤喉<span class="zz">（ㄖㄨㄣˋ ㄏㄡˊ）</span>、潤嗓子<span class="zz">（ㄖㄨㄣˋ ㄙㄤˇ ˙ㄗ）</span>。</li>
+      <li><b>修飾</b>。如：潤色<span class="zz">（ㄖㄨㄣˋ ㄙㄜˋ）</span>、潤飾<span class="zz">（ㄖㄨㄣˋ ㄕˋ）</span>。</li>
+      <li><b>細膩光滑</b>。如：紅潤<span class="zz">（ㄏㄨㄥˊ ㄖㄨㄣˋ）</span>、秀潤<span class="zz">（ㄒㄧㄡˋ ㄖㄨㄣˋ）</span>、圓潤<span class="zz">（ㄩㄢˊ ㄖㄨㄣˋ）</span>。</li>
+    </ol></div>
+    <div class="tipbox">💡 「利潤」的潤是「滋益」（好處）；「潤飾文章」的潤是「修飾」。</div>
+  </div></div>
+
+  <!-- 眾 -->
+  <div class="lesson"><div class="lh"><span class="t">眾</span><span class="p">2 個字義　｜　ㄓㄨㄥˋ</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>數量多</b>（與「寡」相對）。如：眾多<span class="zz">（ㄓㄨㄥˋ ㄉㄨㄛ）</span>、眾人<span class="zz">（ㄓㄨㄥˋ ㄖㄣˊ）</span>、眾說紛紜<span class="zz">（ㄓㄨㄥˋ ㄕㄨㄛ ㄈㄣ ㄩㄣˊ）</span>。</li>
+      <li><b>許多的人</b>。如：群眾<span class="zz">（ㄑㄩㄣˊ ㄓㄨㄥˋ）</span>、觀眾<span class="zz">（ㄍㄨㄢ ㄓㄨㄥˋ）</span>、眾叛親離<span class="zz">（ㄓㄨㄥˋ ㄆㄢˋ ㄑㄧㄣ ㄌㄧˊ）</span>。</li>
+    </ol></div>
+    <div class="tipbox">💡 「眾多」的眾是「多」；「觀眾」的眾是「人」。</div>
+  </div></div>
+
+  <!-- 熟 -->
+  <div class="lesson"><div class="lh"><span class="t">熟</span><span class="p">7 個字義</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>常見的、認識的</b>。如：熟人<span class="zz">（ㄕㄡˊ ㄖㄣˊ）</span>、熟客<span class="zz">（ㄕㄡˊ ㄎㄜˋ）</span>。</li>
+      <li><b>經烹煮爛透的</b>。如：熟食<span class="zz">（ㄕㄡˊ ㄕˊ）</span>、煮熟<span class="zz">（ㄓㄨˇ ㄕㄡˊ）</span>。</li>
+      <li><b>技藝精巧的</b>。如：純熟<span class="zz">（ㄔㄨㄣˊ ㄕㄡˊ）</span>、熟能生巧<span class="zz">（ㄕㄡˊ ㄋㄥˊ ㄕㄥ ㄑㄧㄠˇ）</span>。</li>
+      <li><b>經加工煉製過的</b>。如：熟鐵<span class="zz">（ㄕㄡˊ ㄊㄧㄝˇ）</span>、熟茶<span class="zz">（ㄕㄡˊ ㄔㄚˊ）</span>。</li>
+      <li><b>果實長成至可收穫的程度</b>。如：瓜熟蒂落<span class="zz">（ㄍㄨㄚ ㄕㄡˊ ㄉㄧˋ ㄌㄨㄛˋ）</span>。</li>
+      <li><b>深沉安穩</b>。如：熟睡<span class="zz">（ㄕㄡˊ ㄕㄨㄟˋ）</span>。</li>
+      <li><b>仔細、精詳</b>。如：熟視<span class="zz">（ㄕㄡˊ ㄕˋ）</span>、深思熟慮<span class="zz">（ㄕㄣ ㄙ ㄕㄡˊ ㄌㄩˋ）</span>。</li>
+    </ol></div>
+    <div class="tipbox">💡 「熟」的注音依課本截圖標為 ㄕㄡˊ；國語辭典也收 ㄕㄨˊ，兩種讀法都常見，考試請以課本／老師為準。</div>
+  </div></div>
+
+  <!-- 攻 -->
+  <div class="lesson"><div class="lh"><span class="t">攻</span><span class="p">4 個字義　｜　ㄍㄨㄥ</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>出擊</b>。如：猛攻<span class="zz">（ㄇㄥˇ ㄍㄨㄥ）</span>、反攻<span class="zz">（ㄈㄢˇ ㄍㄨㄥ）</span>、圍攻<span class="zz">（ㄨㄟˊ ㄍㄨㄥ）</span>。</li>
+      <li><b>治療</b>。如：以毒攻毒<span class="zz">（ㄧˇ ㄉㄨˊ ㄍㄨㄥ ㄉㄨˊ）</span>。</li>
+      <li><b>指責</b>。如：攻訐<span class="zz">（ㄍㄨㄥ ㄐㄧㄝˊ）</span>、群起攻之<span class="zz">（ㄑㄩㄣˊ ㄑㄧˇ ㄍㄨㄥ ㄓ）</span>。</li>
+      <li><b>從事、鑽研</b>。如：攻讀<span class="zz">（ㄍㄨㄥ ㄉㄨˊ）</span>、專攻<span class="zz">（ㄓㄨㄢ ㄍㄨㄥ）</span>。</li>
+    </ol></div>
+  </div></div>
+
+  <!-- 擁 -->
+  <div class="lesson"><div class="lh"><span class="t">擁</span><span class="p">4 個字義　｜　1.</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>抱</b>。如：擁抱<span class="zz">（ㄩㄥ ㄅㄠˋ）</span>、擁吻<span class="zz">（ㄩㄥ ㄨㄣˇ）</span>。</li>
+      <li><b>持（持有）</b>。如：擁有<span class="zz">（ㄩㄥ ㄧㄡˇ）</span>。</li>
+      <li><b>推崇</b>。如：擁護<span class="zz">（ㄩㄥ ㄏㄨˋ）</span>、擁戴<span class="zz">（ㄩㄥ ㄉㄞˋ）</span>。</li>
+      <li><b>擠在一起</b>。如：擁塞<span class="zz">（ㄩㄥ ㄙㄜˋ）</span>、蜂擁<span class="zz">（ㄈㄥ ㄩㄥ）</span>。</li>
+    </ol></div>
+  </div></div>
+
+  <!-- 充 -->
+  <div class="lesson"><div class="lh"><span class="t">充</span><span class="p">4 個字義　｜　2.</span></div><div class="lb">
+    <div class="rd"><ol>
+      <li><b>填滿、裝滿</b>。如：填充<span class="zz">（ㄊㄧㄢˊ ㄔㄨㄥ）</span>、充電<span class="zz">（ㄔㄨㄥ ㄉㄧㄢˋ）</span>。</li>
+      <li><b>代理、擔任</b>。如：權充<span class="zz">（ㄑㄩㄢˊ ㄔㄨㄥ）</span>、充當<span class="zz">（ㄔㄨㄥ ㄉㄤ）</span>。</li>
+      <li><b>假冒</b>。如：打腫臉充胖子<span class="zz">（ㄉㄚˇ ㄓㄨㄥˇ ㄌㄧㄢˇ ㄔㄨㄥ ㄆㄤˋ ˙ㄗ）</span>。</li>
+      <li><b>填塞</b>。如：充耳不聞<span class="zz">（ㄔㄨㄥ ㄦˇ ㄅㄨˋ ㄨㄣˊ）</span>。</li>
+    </ol></div>
+    <div class="tipbox">💡 「充電」是「填滿」；「充當」是「擔任」；「充胖子」是「假冒」；「充耳不聞」是「塞住」。</div>
+  </div></div>
+
+  <div class="tip" style="border-color:var(--o)">
+    <b>📝 自我測驗：畫線的字是哪一個意思？（把答案蓋住試試看）</b>
+    <ol>
+      <li>他<u>掩</u>面而泣。<br><span class="hint">答：遮蓋、遮蔽</span></li>
+      <li>公司今年的<u>利潤</u>很高。（潤）<br><span class="hint">答：滋益</span></li>
+      <li>老師幫我<u>潤</u>飾作文。<br><span class="hint">答：修飾</span></li>
+      <li>廣場上聚集了許多<u>觀眾</u>。（眾）<br><span class="hint">答：許多的人</span></li>
+      <li>寶寶在床上<u>熟</u>睡。<br><span class="hint">答：深沉安穩</span></li>
+      <li>哥哥正在<u>攻</u>讀碩士。<br><span class="hint">答：從事、鑽研</span></li>
+      <li>球迷<u>擁</u>戴自己支持的球隊。<br><span class="hint">答：推崇</span></li>
+      <li>他不懂裝懂，是<u>充</u>胖子。<br><span class="hint">答：假冒</span></li>
+    </ol>
+  </div>
+</div><!-- /tab3 -->
+
+<div id="tab4" class="pane">
+  <h2 class="sec" style="margin-top:0;background:#fff;color:#6a1b9a;border:2px solid #6a1b9a">🧩 生字總表（第一～六課）</h2>
+  <div class="legend">每一格：<b class="c1">生字</b> ＋ <b class="c2">注音</b>　／　<b class="c3">部首＋部首注音</b>（橘色，在格子下方；括號內是偏旁寫法）</div>
+  <div class="note noprint">依課本「考前速讀・生字表」整理，共 112 字，按書上由右到左、由上到下的順序排列。部首依教育部國語辭典，請以課本／老師為準。列印時 6 課會排在同一張 A4（直式）。</div>
+  <div class="sheet"><div class="lc"><h3><span>第一課</span><span>19 字</span></h3><div class="cells"><div class="cell"><div class="top"><span class="ch">堅</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄢ</i></span></div><div class="rd2">土 <span>ㄊㄨˇ</span></div></div><div class="cell"><div class="top"><span class="ch">耐</span><span class="zv"><i style="grid-row:1">ㄋ</i><i style="grid-row:2">ㄞ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">而 <span>ㄦˊ</span></div></div><div class="cell"><div class="top"><span class="ch">勞</span><span class="zv"><i style="grid-row:1">ㄌ</i><i style="grid-row:2">ㄠ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">力 <span>ㄌㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">元</span><span class="zv"><i style="grid-row:1">ㄩ</i><i style="grid-row:2">ㄢ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">儿 <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">蝟</span><span class="zv"><i style="grid-row:1">ㄨ</i><i style="grid-row:2">ㄟ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">虫 <span>ㄏㄨㄟˇ</span></div></div><div class="cell"><div class="top"><span class="ch">擁</span><span class="zv"><i style="grid-row:1">ㄩ</i><i style="grid-row:2">ㄥ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">繩</span><span class="zv"><i style="grid-row:1">ㄕ</i><i style="grid-row:2">ㄥ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">刷</span><span class="zv"><i style="grid-row:1">ㄕ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄚ</i></span></div><div class="rd2">刀(刂) <span>ㄉㄠ</span></div></div><div class="cell"><div class="top"><span class="ch">膏</span><span class="zv"><i style="grid-row:1">ㄍ</i><i style="grid-row:2">ㄠ</i></span></div><div class="rd2">肉 <span>ㄖㄡˋ</span></div></div><div class="cell"><div class="top"><span class="ch">遭</span><span class="zv"><i style="grid-row:1">ㄗ</i><i style="grid-row:2">ㄠ</i></span></div><div class="rd2">辵(辶) <span>ㄔㄨㄛˋ</span></div></div><div class="cell"><div class="top"><span class="ch">係</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">人(亻) <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">充</span><span class="zv"><i style="grid-row:1">ㄔ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄥ</i></span></div><div class="rd2">儿 <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">供</span><span class="zv"><i style="grid-row:1">ㄍ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄥ</i></span></div><div class="rd2">人(亻) <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">凸</span><span class="zv"><i style="grid-row:1">ㄊ</i><i style="grid-row:2">ㄨ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">凵 <span>ㄎㄢˇ</span></div></div><div class="cell"><div class="top"><span class="ch">彼</span><span class="zv"><i style="grid-row:1">ㄅ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">彳 <span>ㄔˋ</span></div></div><div class="cell"><div class="top"><span class="ch">協</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄝ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">十 <span>ㄕˊ</span></div></div><div class="cell"><div class="top"><span class="ch">融</span><span class="zv"><i style="grid-row:1">ㄖ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄥ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">虫 <span>ㄏㄨㄟˇ</span></div></div><div class="cell"><div class="top"><span class="ch">洽</span><span class="zv"><i style="grid-row:1">ㄑ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄚ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">水(氵) <span>ㄕㄨㄟˇ</span></div></div><div class="cell"><div class="top"><span class="ch">諦</span><span class="zv"><i style="grid-row:1">ㄉ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">言 <span>ㄧㄢˊ</span></div></div><div class="cell blank"></div></div></div><div class="lc"><h3><span>第二課</span><span>17 字</span></h3><div class="cells"><div class="cell"><div class="top"><span class="ch">笛</span><span class="zv"><i style="grid-row:1">ㄉ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">竹 <span>ㄓㄨˊ</span></div></div><div class="cell"><div class="top"><span class="ch">奏</span><span class="zv"><i style="grid-row:1">ㄗ</i><i style="grid-row:2">ㄡ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">大 <span>ㄉㄚˋ</span></div></div><div class="cell"><div class="top"><span class="ch">簡</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄢ</i><b style="grid-row:3">ˇ</b></span></div><div class="rd2">竹 <span>ㄓㄨˊ</span></div></div><div class="cell"><div class="top"><span class="ch">旋</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄩ</i><i style="grid-row:3">ㄢ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">方 <span>ㄈㄤ</span></div></div><div class="cell"><div class="top"><span class="ch">律</span><span class="zv"><i style="grid-row:1">ㄌ</i><i style="grid-row:2">ㄩ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">彳 <span>ㄔˋ</span></div></div><div class="cell"><div class="top"><span class="ch">縈</span><span class="zv"><i style="grid-row:1">ㄧ</i><i style="grid-row:2">ㄥ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">繞</span><span class="zv"><i style="grid-row:1">ㄖ</i><i style="grid-row:2">ㄠ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">梢</span><span class="zv"><i style="grid-row:1">ㄕ</i><i style="grid-row:2">ㄠ</i></span></div><div class="rd2">木 <span>ㄇㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">廊</span><span class="zv"><i style="grid-row:1">ㄌ</i><i style="grid-row:2">ㄤ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">广 <span>ㄧㄢˇ</span></div></div><div class="cell"><div class="top"><span class="ch">熟</span><span class="zv"><i style="grid-row:1">ㄕ</i><i style="grid-row:2">ㄡ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">火(灬) <span>ㄏㄨㄛˇ</span></div></div><div class="cell"><div class="top"><span class="ch">悉</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄧ</i></span></div><div class="rd2">心 <span>ㄒㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">諧</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄝ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">言 <span>ㄧㄢˊ</span></div></div><div class="cell"><div class="top"><span class="ch">階</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄝ</i></span></div><div class="rd2">阜(阝) <span>ㄈㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">須</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄩ</i></span></div><div class="rd2">頁 <span>ㄧㄝˋ</span></div></div><div class="cell"><div class="top"><span class="ch">絮</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄩ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">伍</span><span class="zv"><i style="grid-row:1">ㄨ</i><b style="grid-row:1">ˇ</b></span></div><div class="rd2">人(亻) <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">威</span><span class="zv"><i style="grid-row:1">ㄨ</i><i style="grid-row:2">ㄟ</i></span></div><div class="rd2">女 <span>ㄋㄩˇ</span></div></div><div class="cell blank"></div><div class="cell blank"></div><div class="cell blank"></div></div></div><div class="lc"><h3><span>第三課</span><span>19 字</span></h3><div class="cells"><div class="cell"><div class="top"><span class="ch">璧</span><span class="zv"><i style="grid-row:1">ㄅ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">玉 <span>ㄩˋ</span></div></div><div class="cell"><div class="top"><span class="ch">歸</span><span class="zv"><i style="grid-row:1">ㄍ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄟ</i></span></div><div class="rd2">止 <span>ㄓˇ</span></div></div><div class="cell"><div class="top"><span class="ch">諸</span><span class="zv"><i style="grid-row:1">ㄓ</i><i style="grid-row:2">ㄨ</i></span></div><div class="rd2">言 <span>ㄧㄢˊ</span></div></div><div class="cell"><div class="top"><span class="ch">侯</span><span class="zv"><i style="grid-row:1">ㄏ</i><i style="grid-row:2">ㄡ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">人(亻) <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">挺</span><span class="zv"><i style="grid-row:1">ㄊ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄥ</i><b style="grid-row:3">ˇ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">官</span><span class="zv"><i style="grid-row:1">ㄍ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄢ</i></span></div><div class="rd2">宀 <span>ㄇㄧㄢˊ</span></div></div><div class="cell"><div class="top"><span class="ch">軍</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄩ</i><i style="grid-row:3">ㄣ</i></span></div><div class="rd2">車 <span>ㄔㄜ</span></div></div><div class="cell"><div class="top"><span class="ch">羞</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄡ</i></span></div><div class="rd2">羊 <span>ㄧㄤˊ</span></div></div><div class="cell"><div class="top"><span class="ch">辱</span><span class="zv"><i style="grid-row:1">ㄖ</i><i style="grid-row:2">ㄨ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">辰 <span>ㄔㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">懦</span><span class="zv"><i style="grid-row:1">ㄋ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄛ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">心(忄) <span>ㄒㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">恥</span><span class="zv"><i style="grid-row:1">ㄔ</i><b style="grid-row:1">ˇ</b></span></div><div class="rd2">心 <span>ㄒㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">權</span><span class="zv"><i style="grid-row:1">ㄑ</i><i style="grid-row:2">ㄩ</i><i style="grid-row:3">ㄢ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">木 <span>ㄇㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">勢</span><span class="zv"><i style="grid-row:1">ㄕ</i><b style="grid-row:1">ˋ</b></span></div><div class="rd2">力 <span>ㄌㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">攻</span><span class="zv"><i style="grid-row:1">ㄍ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄥ</i></span></div><div class="rd2">攴(攵) <span>ㄆㄨ</span></div></div><div class="cell"><div class="top"><span class="ch">君</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄩ</i><i style="grid-row:3">ㄣ</i></span></div><div class="rd2">口 <span>ㄎㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">鎮</span><span class="zv"><i style="grid-row:1">ㄓ</i><i style="grid-row:2">ㄣ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">金 <span>ㄐㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">愧</span><span class="zv"><i style="grid-row:1">ㄎ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄟ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">心(忄) <span>ㄒㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">荊</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄥ</i></span></div><div class="rd2">艸(艹) <span>ㄘㄠˇ</span></div></div><div class="cell"><div class="top"><span class="ch">肝</span><span class="zv"><i style="grid-row:1">ㄍ</i><i style="grid-row:2">ㄢ</i></span></div><div class="rd2">肉(月) <span>ㄖㄡˋ</span></div></div><div class="cell blank"></div></div></div><div class="lc"><h3><span>第四課</span><span>19 字</span></h3><div class="cells"><div class="cell"><div class="top"><span class="ch">筍</span><span class="zv"><i style="grid-row:1">ㄙ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄣ</i><b style="grid-row:3">ˇ</b></span></div><div class="rd2">竹 <span>ㄓㄨˊ</span></div></div><div class="cell"><div class="top"><span class="ch">廳</span><span class="zv"><i style="grid-row:1">ㄊ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄥ</i></span></div><div class="rd2">广 <span>ㄧㄢˇ</span></div></div><div class="cell"><div class="top"><span class="ch">眾</span><span class="zv"><i style="grid-row:1">ㄓ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄥ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">目 <span>ㄇㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">據</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄩ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">逐</span><span class="zv"><i style="grid-row:1">ㄓ</i><i style="grid-row:2">ㄨ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">辵(辶) <span>ㄔㄨㄛˋ</span></div></div><div class="cell"><div class="top"><span class="ch">棋</span><span class="zv"><i style="grid-row:1">ㄑ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">木 <span>ㄇㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">撲</span><span class="zv"><i style="grid-row:1">ㄆ</i><i style="grid-row:2">ㄨ</i></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">富</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄨ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">宀 <span>ㄇㄧㄢˊ</span></div></div><div class="cell"><div class="top"><span class="ch">純</span><span class="zv"><i style="grid-row:1">ㄔ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄣ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">寓</span><span class="zv"><i style="grid-row:1">ㄩ</i><b style="grid-row:1">ˋ</b></span></div><div class="rd2">宀 <span>ㄇㄧㄢˊ</span></div></div><div class="cell"><div class="top"><span class="ch">超</span><span class="zv"><i style="grid-row:1">ㄔ</i><i style="grid-row:2">ㄠ</i></span></div><div class="rd2">走 <span>ㄗㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">炒</span><span class="zv"><i style="grid-row:1">ㄔ</i><i style="grid-row:2">ㄠ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">火 <span>ㄏㄨㄛˇ</span></div></div><div class="cell"><div class="top"><span class="ch">氛</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄣ</i></span></div><div class="rd2">气 <span>ㄑㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">齡</span><span class="zv"><i style="grid-row:1">ㄌ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄥ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">齒 <span>ㄔˇ</span></div></div><div class="cell"><div class="top"><span class="ch">技</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">例</span><span class="zv"><i style="grid-row:1">ㄌ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">人(亻) <span>ㄖㄣˊ</span></div></div><div class="cell"><div class="top"><span class="ch">憶</span><span class="zv"><i style="grid-row:1">ㄧ</i><b style="grid-row:1">ˋ</b></span></div><div class="rd2">心(忄) <span>ㄒㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">培</span><span class="zv"><i style="grid-row:1">ㄆ</i><i style="grid-row:2">ㄟ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">土 <span>ㄊㄨˇ</span></div></div><div class="cell"><div class="top"><span class="ch">患</span><span class="zv"><i style="grid-row:1">ㄏ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄢ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">心 <span>ㄒㄧㄣ</span></div></div><div class="cell blank"></div></div></div><div class="lc"><h3><span>第五課</span><span>19 字</span></h3><div class="cells"><div class="cell"><div class="top"><span class="ch">英</span><span class="zv"><i style="grid-row:1">ㄧ</i><i style="grid-row:2">ㄥ</i></span></div><div class="rd2">艸(艹) <span>ㄘㄠˇ</span></div></div><div class="cell"><div class="top"><span class="ch">采</span><span class="zv"><i style="grid-row:1">ㄘ</i><i style="grid-row:2">ㄞ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">釆 <span>ㄅㄧㄢˋ</span></div></div><div class="cell"><div class="top"><span class="ch">揚</span><span class="zv"><i style="grid-row:1">ㄧ</i><i style="grid-row:2">ㄤ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">媲</span><span class="zv"><i style="grid-row:1">ㄆ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">女 <span>ㄋㄩˇ</span></div></div><div class="cell"><div class="top"><span class="ch">搜</span><span class="zv"><i style="grid-row:1">ㄙ</i><i style="grid-row:2">ㄡ</i></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">劇</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄩ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">刀(刂) <span>ㄉㄠ</span></div></div><div class="cell"><div class="top"><span class="ch">螢</span><span class="zv"><i style="grid-row:1">ㄧ</i><i style="grid-row:2">ㄥ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">虫 <span>ㄏㄨㄟˇ</span></div></div><div class="cell"><div class="top"><span class="ch">拯</span><span class="zv"><i style="grid-row:1">ㄓ</i><i style="grid-row:2">ㄥ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">預</span><span class="zv"><i style="grid-row:1">ㄩ</i><b style="grid-row:1">ˋ</b></span></div><div class="rd2">頁 <span>ㄧㄝˋ</span></div></div><div class="cell"><div class="top"><span class="ch">脈</span><span class="zv"><i style="grid-row:1">ㄇ</i><i style="grid-row:2">ㄞ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">肉(月) <span>ㄖㄡˋ</span></div></div><div class="cell"><div class="top"><span class="ch">院</span><span class="zv"><i style="grid-row:1">ㄩ</i><i style="grid-row:2">ㄢ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">阜(阝) <span>ㄈㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">授</span><span class="zv"><i style="grid-row:1">ㄕ</i><i style="grid-row:2">ㄡ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">犯</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄢ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">犬(犭) <span>ㄑㄩㄢˇ</span></div></div><div class="cell"><div class="top"><span class="ch">吔</span><span class="zv"><i style="grid-row:1">˙</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄝ</i></span></div><div class="rd2">口 <span>ㄎㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">違</span><span class="zv"><i style="grid-row:1">ㄨ</i><i style="grid-row:2">ㄟ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">辵(辶) <span>ㄔㄨㄛˋ</span></div></div><div class="cell"><div class="top"><span class="ch">司</span><span class="zv"><i style="grid-row:1">ㄙ</i></span></div><div class="rd2">口 <span>ㄎㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">潤</span><span class="zv"><i style="grid-row:1">ㄖ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄣ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">水(氵) <span>ㄕㄨㄟˇ</span></div></div><div class="cell"><div class="top"><span class="ch">愕</span><span class="zv"><i style="grid-row:1">ㄜ</i><b style="grid-row:1">ˋ</b></span></div><div class="rd2">心(忄) <span>ㄒㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">創</span><span class="zv"><i style="grid-row:1">ㄔ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄤ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">刀(刂) <span>ㄉㄠ</span></div></div><div class="cell blank"></div></div></div><div class="lc"><h3><span>第六課</span><span>19 字</span></h3><div class="cells"><div class="cell"><div class="top"><span class="ch">盃</span><span class="zv"><i style="grid-row:1">ㄅ</i><i style="grid-row:2">ㄟ</i></span></div><div class="rd2">皿 <span>ㄇㄧㄣˇ</span></div></div><div class="cell"><div class="top"><span class="ch">缺</span><span class="zv"><i style="grid-row:1">ㄑ</i><i style="grid-row:2">ㄩ</i><i style="grid-row:3">ㄝ</i></span></div><div class="rd2">缶 <span>ㄈㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">席</span><span class="zv"><i style="grid-row:1">ㄒ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">巾 <span>ㄐㄧㄣ</span></div></div><div class="cell"><div class="top"><span class="ch">塑</span><span class="zv"><i style="grid-row:1">ㄙ</i><i style="grid-row:2">ㄨ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">土 <span>ㄊㄨˇ</span></div></div><div class="cell"><div class="top"><span class="ch">廢</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄟ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">广 <span>ㄧㄢˇ</span></div></div><div class="cell"><div class="top"><span class="ch">質</span><span class="zv"><i style="grid-row:1">ㄓ</i><b style="grid-row:1">ˊ</b></span></div><div class="rd2">貝 <span>ㄅㄟˋ</span></div></div><div class="cell"><div class="top"><span class="ch">飲</span><span class="zv"><i style="grid-row:1">ㄧ</i><i style="grid-row:2">ㄣ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">食 <span>ㄕˊ</span></div></div><div class="cell"><div class="top"><span class="ch">掩</span><span class="zv"><i style="grid-row:1">ㄧ</i><i style="grid-row:2">ㄢ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">焚</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄣ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">火 <span>ㄏㄨㄛˇ</span></div></div><div class="cell"><div class="top"><span class="ch">熔</span><span class="zv"><i style="grid-row:1">ㄖ</i><i style="grid-row:2">ㄨ</i><i style="grid-row:3">ㄥ</i><b style="grid-row:3">ˊ</b></span></div><div class="rd2">火 <span>ㄏㄨㄛˇ</span></div></div><div class="cell"><div class="top"><span class="ch">抽</span><span class="zv"><i style="grid-row:1">ㄔ</i><i style="grid-row:2">ㄡ</i></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">紡</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄤ</i><b style="grid-row:2">ˇ</b></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">極</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">木 <span>ㄇㄨˋ</span></div></div><div class="cell"><div class="top"><span class="ch">複</span><span class="zv"><i style="grid-row:1">ㄈ</i><i style="grid-row:2">ㄨ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">衣(衤) <span>ㄧ</span></div></div><div class="cell"><div class="top"><span class="ch">織</span><span class="zv"><i style="grid-row:1">ㄓ</i></span></div><div class="rd2">糸 <span>ㄇㄧˋ</span></div></div><div class="cell"><div class="top"><span class="ch">耗</span><span class="zv"><i style="grid-row:1">ㄏ</i><i style="grid-row:2">ㄠ</i><b style="grid-row:2">ˋ</b></span></div><div class="rd2">耒 <span>ㄌㄟˇ</span></div></div><div class="cell"><div class="top"><span class="ch">至</span><span class="zv"><i style="grid-row:1">ㄓ</i><b style="grid-row:1">ˋ</b></span></div><div class="rd2">至 <span>ㄓˋ</span></div></div><div class="cell"><div class="top"><span class="ch">摩</span><span class="zv"><i style="grid-row:1">ㄇ</i><i style="grid-row:2">ㄛ</i><b style="grid-row:2">ˊ</b></span></div><div class="rd2">手(扌) <span>ㄕㄡˇ</span></div></div><div class="cell"><div class="top"><span class="ch">屆</span><span class="zv"><i style="grid-row:1">ㄐ</i><i style="grid-row:2">ㄧ</i><i style="grid-row:3">ㄝ</i><b style="grid-row:3">ˋ</b></span></div><div class="rd2">尸 <span>ㄕ</span></div></div><div class="cell blank"></div></div></div></div>
+</div><!-- /tab4 -->
+
+
+
+
+
+
+<script>
+function showTab(n){
+  for(var i=1;i<=4;i++){
+    document.getElementById('tab'+i).classList.toggle('active',i===n);
+    document.getElementById('b'+i).classList.toggle('active',i===n);
+  }
+  document.body.setAttribute('data-tab',n);
+  window.scrollTo(0,0);
+}
+</script>
+<footer>修辭依課本第一～六課整理；多音字依課本「認識多音字」整理　｜　「補充」與「記法」為輔助說明，請以課本為準</footer>
+</div>
+</body>
+</html>
